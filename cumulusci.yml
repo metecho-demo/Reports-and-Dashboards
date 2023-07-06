@@ -1,0 +1,29 @@
+minimum_cumulusci_version: '3.74.0'
+project:
+    name: Reports-and-Dashboards
+    package:
+        name: Reports-and-Dashboards
+        namespace: d2x
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Reports-and-Dashboards/tests
+            options:
+                outputdir: robot/Reports-and-Dashboards/results
+
+    robot_testdoc:
+        options:
+            path: robot/Reports-and-Dashboards/tests
+            output: robot/Reports-and-Dashboards/doc/Reports-and-Dashboards_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
